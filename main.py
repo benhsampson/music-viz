@@ -124,15 +124,15 @@ def percussive_onset(y, sr):
     first = True
     notes = []
     for onset in onset_frames:
-      # For all other notes
-      if not first:
-          note_duration = librosa.frames_to_time(onset, sr=sr)
-          notes.append((onset, note_duration - prev_note_duration))
-          prev_note_duration = note_duration
-      # For the first note
-      else:
-          prev_note_duration = librosa.frames_to_time(onset, sr=sr)
-          first = False
+        # For all other notes
+        if not first:
+            note_duration = librosa.frames_to_time(onset, sr=sr)
+            notes.append((note_duration, note_duration - prev_note_duration))
+            prev_note_duration = note_duration
+        # For the first note
+        else:
+            prev_note_duration = librosa.frames_to_time(onset, sr=sr)
+            first = False
     return np.array([*notes])
 
 def harmonic_onset(y, sr, n_fft, hop_length, fmin, fmax, n_mels, lag, max_size):
@@ -155,11 +155,11 @@ def harmonic_onset(y, sr, n_fft, hop_length, fmin, fmax, n_mels, lag, max_size):
     for onset in onset_frames:
       # For all other notes
       if not first:
-          notes.append((onset, onset - prev_note_duration))
-          prev_note_duration = onset
+            notes.append((onset, onset - prev_note_onset))
+            prev_note_onset = onset
       # For the first note
       else:
-          prev_note_duration = onset
+          prev_note_onset = onset
           first = False
     return np.array([*notes])
 
@@ -185,11 +185,14 @@ def main(music_path):
     
     win_len_sec = 0.2
     
-    x, Fs= librosa.load(music_path, sr=Fs)
+    x, Fs = librosa.load(music_path, sr=Fs)
     x_h, x_p = hps(x, Fs, N, H, L_h_sec, L_p_Hz)
     x_p_onset = percussive_onset(x_p, Fs)
     x_h_onset = harmonic_onset(x_h, Fs, n_fft, hop_length, fmin, fmax, n_mels, lag, max_size)
     x_loudness = loudness(x, Fs)
+    np.save('values/x.npy', x)
+    np.save('values/x_h.npy', x_h)
+    np.save('values/x_p.npy', x_p)
     np.save('values/x_p_onset.npy', x_p_onset)
     np.save('values/x_h_onset.npy', x_h_onset)
     np.save('values/x_loudness.npy', x_loudness)
