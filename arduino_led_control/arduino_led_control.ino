@@ -10,6 +10,7 @@
 #define BRIGHTNESS  170
 #define LED_TYPE    WS2811
 #define COLOR_ORDER GRB
+#define ARR_SIZE 192
 CRGB leds[NUM_LEDS];
 
 #define UPDATES_PER_SECOND 100
@@ -43,7 +44,10 @@ void loop() {
     if (Serial.available() > 0) {
 
         // store received data in array
-        Serial.readBytesUntil('\n', inputBuffer, 192);
+        Serial.readBytesUntil('\n', inputBuffer, ARR_SIZE);
+
+        Serial.write(inputBuffer, ARR_SIZE);
+        Serial.write('\n');
     }
     
     // set LED colors
