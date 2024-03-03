@@ -66,7 +66,9 @@ FPS = 30
 INTERVAL = 1/FPS
 # %%
 
-sound = AudioSegment.from_mp3('data/lofi-type-beat.mp3')
+MUSIC = 'sunflower'
+
+sound = AudioSegment.from_mp3(F'data/{MUSIC}.mp3')
 music_thread = threading.Thread(target=play, args=(sound,))
 
 def rgb2hex(r,g,b):
@@ -75,7 +77,7 @@ def rgb2hex(r,g,b):
     b = int(255*b)
     return "#{:02x}{:02x}{:02x}".format(r,g,b)
 
-frames = np.load('./values/frames.npy')
+frames = np.load(f'./values/{MUSIC}.npy')
 
 def animate(i):
     global music_start, music_thread
