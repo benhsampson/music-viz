@@ -5,7 +5,7 @@
 #include <FastLED.h>
  
 // setup constants
-#define LED_PIN     7
+#define LED_PIN     13
 #define NUM_LEDS    64
 #define BRIGHTNESS  170
 #define LED_TYPE    WS2811
@@ -39,31 +39,23 @@ void setup() {
 
 // loop
 void loop() { 
-
+    while(!Serial.available());
     // check if data in serial buffer ()
-    if (Serial.available() > 0) {
 
-        // store received data in array
-        Serial.readBytesUntil('\n', inputBuffer, ARR_SIZE);
-
-        Serial.write(inputBuffer, ARR_SIZE);
-        Serial.write('\n');
-    }
+    // store received data in array
+    Serial.readBytesUntil('\r', inputBuffer, ARR_SIZE);
     
     // set LED colors
-    for (byte i = 0; i < 192; i = i +3) {
+    for (byte i = 0; i < 192; i = i + 3) {
         byte R = inputBuffer[i];
         byte G = inputBuffer[i+1];
         byte B = inputBuffer[i+2];
 
         leds[i/3] = CRGB(R,G,B);
-        FastLED.show();
     }
-
+    FastLED.show();
+    // delay(50);
     // empty array after use
-    memset(inputBuffer, 0, sizeof(inputBuffer));
-
-    // delay that updates LEDs at 30 Hz (1/30 sec)
-    delay(33); 
+    // memset(inputBuffer, 0, sizeof(inputBuffer));
 
 }
