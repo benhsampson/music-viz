@@ -1,6 +1,6 @@
 ## Inspiration
 
-Our group, being rave and concert goers,  was initially inspired by the laser and light shows delivered at such events. It seemed quite apparent anecdotally, and in the widespread adoption of accompanying visual spectacles, that an auditory experience can be synergistically enhanced by engaging other human senses, especially sight.
+Our group, being rave and concert goers, was initially inspired by the laser and light shows delivered at such events. It seemed quite apparent anecdotally, and in the widespread adoption of accompanying visual spectacles, that an auditory experience can be synergistically enhanced by engaging other human senses, especially sight.
 
 As such we thought about the health implications of such a technology. It is widely understood and researched that music has a role in pain management (1), and mental wellbeing (2). These findings are ubiquitous within (3)  and without (4) healthcare settings, and non-discriminating by age (5, 6). 
 
@@ -8,25 +8,52 @@ One area of implementation is the use in paediatric functional constipation whic
 
 ## What it does
 
-Existing audio visualising technologies seem to only decompose music and sounds into a composition of frequencies and visualise audio in a frequency-amplitude domain. What we hope to achieve with MusicViz is to gain a deeper insight into music through Neuro-Linguistic Programming and music analysis to extract its characteristics.
+Existing audio visualising technologies seem to only decompose music and sounds into a composition of frequencies and visualise audio in a frequency-amplitude domain. What we hope to achieve with MusicViz is to gain a deeper insight into music through Neuro-Linguistic Programming (NLP) and music analysis to extract its characteristics.
 
 MusicViz would be attempting to extract the technical components of a piece such as its keys and key changes, tempo and rhythm, chords, consonances and dissonances. Combined with analysis of melody, lyrics to provide more insight into more nuanced and complex concepts such as the themes, mood, tension and release of the piece. Then based on its analysis, produce a synchronised visual representation of the piece in the form of an LED light show. 
 
 ## How we built it
 
+In order to build towards a minimum viable product (MVP), our team deconstructed the concept into its core components. The cores identified were music analysis, visualiser logic, and hardware.
 
+A large part of the project was research conducted into music analysis and music composition to isolate the most relevant components. Following which was working out how to extract such information from a piece of music.
+
+The Librosa library proved invaluable in decomposing a track to enable deeper analysis. Through signal processing and the development of computer logic we were able extract the relevant information in a track.
+
+We also developed logic to transform the audio input into a visual representation through further signal processing. This also required us to develop understanding into colour theory and associating this with music composition and emotions to output a coherent experience. 
+
+Due to time constraints, a decision was made to simplify the visualisation to an 8 x 8 LED array to demonstrate MusicVis. A python simulation was constructed using the matplotlib library to help visualise implementations of the our developed logic. 
+
+Lastly was the construction of the LED matrix required sourcing various components to physically demonstrate our product.
 
 ## Challenges we ran into
 
+Major challenges the team encountered were largely resultant from our lack of experience in different domains but we were motivated to build our breadth and learn new skills. 
 
+Only one member had experience with music but they have not had much experience with the intricacies of music theory. 
+
+Librosa, though powerful, was a library that was new to the team thus requiring time to build familiarity with its use.
+
+Developing the logic took a lot of trial and error and deepening our understanding of signal processing - we expect further tweaking will be necessary to achieve better polish.
+
+Using and programming LEDs was new to the team as well, necessitating learning of the hardware requirements to build the product.
 
 ## Accomplishments that we're proud of
 
+Being able to construct both the software and hardware for a MVP within the timeframe of the UniHack was something our team is proud of.
 
+We hope by further developing this product we might be able to help children with their constipation, as well as provide a product for general consumer use.
 
 ## What we learned
 
+To summarise:
 
+- Learning about music composition and music theory
+- Learning to use the Librosa library
+- Learning how to implement NLP
+- Learning signal processing
+- Learning colour theory 
+- Learning how to program and build LED products
 
 ## What's next for MusicVis
 
