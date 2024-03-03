@@ -52,10 +52,10 @@ void loop() {
         byte B = inputBuffer[i+2];
 
         leds[i/3] = CRGB(R,G,B);
-        FastLED.show();
     }
-
+    FastLED.show();
+    // delay(50);
     // empty array after use
-    memset(inputBuffer, 0, sizeof(inputBuffer));
+    // memset(inputBuffer, 0, sizeof(inputBuffer));
 
 }

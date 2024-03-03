@@ -2,7 +2,7 @@ import serial
 import time
 import numpy as np
 
-arduino = serial.Serial(port='COM4',   baudrate=9600, timeout=.1)
+arduino = serial.Serial(port='COM5', baudrate=9600, timeout=.1)
 
 frames = 100*np.ones(192, dtype=np.byte)
 frames = frames.tobytes() + b'\r'
@@ -16,7 +16,7 @@ def write_read(x):
 
 while True:
     write_read(frames)
-    time.sleep(3)
+    time.sleep(1/50)
     write_read(frames2)
 
     

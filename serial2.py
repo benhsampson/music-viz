@@ -18,8 +18,6 @@ while True:
     print(array)
     arduino.write(array)
 
-    time.sleep(2)
-
     x = arduino.readline()
     print(x)
     
