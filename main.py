@@ -187,15 +187,20 @@ def main(music_path):
     
     x, Fs = librosa.load(music_path, sr=Fs)
     x_h, x_p = hps(x, Fs, N, H, L_h_sec, L_p_Hz)
-    x_p_onset = percussive_onset(x_p, Fs)
+    # x_p_onset = percussive_onset(x_p, Fs)
+    x_p_onset = harmonic_onset(x_p, Fs, n_fft, hop_length, fmin, fmax, n_mels, lag, max_size)
     x_h_onset = harmonic_onset(x_h, Fs, n_fft, hop_length, fmin, fmax, n_mels, lag, max_size)
     x_loudness = loudness(x, Fs)
+    x_h_loudness = loudness(x_h, Fs)
+    x_p_loudness = loudness(x_p, Fs)
     np.save('values/x.npy', x)
     np.save('values/x_h.npy', x_h)
     np.save('values/x_p.npy', x_p)
     np.save('values/x_p_onset.npy', x_p_onset)
     np.save('values/x_h_onset.npy', x_h_onset)
     np.save('values/x_loudness.npy', x_loudness)
+    np.save('values/x_h_loudness.npy', x_h_loudness)
+    np.save('values/x_p_loudness.npy', x_p_loudness)
     
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Music Visualizer')
