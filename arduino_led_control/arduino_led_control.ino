@@ -40,7 +40,7 @@ void setup() {
 void loop() { 
 
     // check if data in serial buffer ()
-    if (Serial.available > 0) {
+    if (Serial.available() > 0) {
 
         // store received data in array
         Serial.readBytesUntil('\n', inputBuffer, 192);
