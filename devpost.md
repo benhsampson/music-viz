@@ -2,9 +2,9 @@
 
 Our group, being rave and concert goers, was initially inspired by the laser and light shows delivered at such events. It seemed quite apparent anecdotally, and in the widespread adoption of accompanying visual spectacles, that an auditory experience can be synergistically enhanced by engaging other human senses, especially sight.
 
-As such we thought about the health implications of such a technology. It is widely understood and researched that music has a role in pain management (1), and mental wellbeing (2). These findings are ubiquitous within (3)  and without (4) healthcare settings, and non-discriminating by age (5, 6). 
+As such we thought about the health implications of such a technology. It is widely understood and researched that music has a role in pain management ([1](#references)), and mental wellbeing ([2](#references)). These findings are ubiquitous within ([3](#references))  and without ([4](#references)) healthcare settings, and non-discriminating by age ([5](#references), [6](#references)). 
 
-One area of implementation is the use in paediatric functional constipation which is a common ailment with significant impact on the affected child and their parents (7). An aspect of this disease we hope to improve through MusicViz is to reduce the anxiety and pain associated with the toilet for children (8) by enhancing music therapy with accompanying visual stimuli. 
+One area of implementation is the use in paediatric functional constipation which is a common ailment with significant impact on the affected child and their parents ([7](#references)). An aspect of this disease we hope to improve through MusicViz is to reduce the anxiety and pain associated with the toilet for children ([8](#references)) by enhancing music therapy with accompanying visual stimuli. 
 
 ## What it does
 
