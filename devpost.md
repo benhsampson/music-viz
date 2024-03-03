@@ -14,19 +14,44 @@ MusicViz would be attempting to extract the technical components of a piece such
 
 ## How we built it
 
+In order to build towards a minimum viable product (MVP), our team deconstructed the concept into its core components. The cores identified were music analysis, visualiser logic, and hardware.
 
+A large part of the project was research conducted into music analysis and music composition to isolate the most relevant components. Following which was working out how to extract such information from a piece of music.
+
+The Librosa library proved invaluable in decomposing a track to enable deeper analysis but still required the development of computer logic to interpret and extract relevant information.
+
+We also needed to develop logic to transform the audio input into a visual representation. This required us to develop understanding into colour theory and associating this with music composition and emotions. 
+
+Due to time constraints, a decision was made to simplify the visualisation to an 8 x 8 LED array to demonstrate MusicVis. A python simulation was constructed using the matplotlib library to help visualise implementations of the our developed logic. 
+
+Lastly the construction of the LED matrix and 
 
 ## Challenges we ran into
 
+Major challenges the team encountered were largely resultant from a lack of experience. 
 
+Only one member had experience with music but they have not had much experience with the intricacies of music theory. 
+
+Librosa, though powerful, was a library that was new to the team thus requiring time to build familiarity with its use.
+
+Developing the logic took a lot of trial and error - we expect further tweaking will be necessary to achieve better polish.
+
+Using and programming LEDs was new to the team as well, necessitating learning of the hardware requirements to build the product.
 
 ## Accomplishments that we're proud of
 
+Being able to construct both the software and hardware for a MVP within the timeframe of the UniHack was something our team is proud of.
 
+We hope by further developing this product we might be able to help children with their constipation, as well as provide a product for general consumer use.
 
 ## What we learned
 
+To summarise:
 
+- Learning about music composition and music theory
+- Learning to use the Librosa library
+- Learning colour theory 
+- Learning how to program and build LED products
 
 ## What's next for MusicVis
 
